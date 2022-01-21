@@ -9,29 +9,31 @@ import repulsorVideo from "@assets/videos/repulsor.mp4";
 import sensorBattleVideo from "@assets/videos/sensor-battle.mp4";
 import nightAtSchoolVideo from "@assets/videos/chair-dance.mp4";
 
-const Card = ({ path, title, tags = [], children }) => {
+const Card = ({ path, title, year, tags = [], children }) => {
   return (
     <Link to={path}>
-      <div className="relative flex flex-col p-4 bg-white border rounded before:absolute before:-z-10 before:inset-1 before:shadow-xl before:opacity-0 before:transition-opacity hover:before:opacity-100">
-        <div className="aspect-[4/3]">{children}</div>
-        <h2 className="mt-3 font-bold self-center">{title}</h2>
-        <p className="mt-1 text-sm text-gray-500 self-center">
-          {tags.join(" / ")}
-        </p>
+      <div className="flex flex-col p-4 bg-white border rounded hover-shadow">
+        <div className="aspect-[3/2]">{children}</div>
+        <h2 className="mt-3 font-bold flex justify-between items-center">
+          <span>{title}</span>
+          <span className="text-sm text-gray-500">{year}</span>
+        </h2>
+        <p className="mt-1 text-sm text-gray-500">{tags.join(" / ")}</p>
       </div>
     </Link>
   );
 };
 
-const PlaygroundPage = ({ data }) => {
+const ProjectsPage = ({ data }) => {
   return (
     <Layout>
-      <Seo title="Playground" />
+      <Seo title="Projects" />
       <div className="container py-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
           <Card
             path="/time-globe/"
             title="Time Globe"
+            year="2021"
             tags={["Fabrication", "Product Design"]}
           >
             <GatsbyImage
@@ -44,6 +46,7 @@ const PlaygroundPage = ({ data }) => {
           <Card
             path="/night-at-school/"
             title="Night At School"
+            year="2021"
             tags={["3D Animation"]}
           >
             <video
@@ -60,6 +63,7 @@ const PlaygroundPage = ({ data }) => {
           <Card
             path="/sensor-battle/"
             title="Sensor Battle"
+            year="2020"
             tags={["Installation", "Game"]}
           >
             <video
@@ -76,6 +80,7 @@ const PlaygroundPage = ({ data }) => {
           <Card
             path="/music-meal/"
             title="Music Meal"
+            year="2019"
             tags={["E-textile", "Music"]}
           >
             <GatsbyImage
@@ -88,6 +93,7 @@ const PlaygroundPage = ({ data }) => {
           <Card
             path="/iron-mans-repulsor/"
             title="Iron Man's Repulsor"
+            year="2019"
             tags={["E-textile"]}
           >
             <video
@@ -107,25 +113,19 @@ const PlaygroundPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query Playground {
-    onReflection: file(relativePath: { eq: "on-reflection/bicycle.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(quality: 80, aspectRatio: 1.35)
-      }
-    }
-
+  query {
     musicMeal: file(relativePath: { eq: "music-meal/exhibition.jpeg" }) {
       childImageSharp {
-        gatsbyImageData(quality: 80, aspectRatio: 1.35)
+        gatsbyImageData(quality: 80, aspectRatio: 1.5)
       }
     }
 
     timeGlobe: file(relativePath: { eq: "time-globe/final.jpg" }) {
       childImageSharp {
-        gatsbyImageData(quality: 80, aspectRatio: 1.35)
+        gatsbyImageData(quality: 80, aspectRatio: 1.5)
       }
     }
   }
 `;
 
-export default PlaygroundPage;
+export default ProjectsPage;

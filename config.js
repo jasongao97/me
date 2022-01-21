@@ -5,12 +5,12 @@ module.exports = {
   siteUrl: "https://jasongao.me",
   navigationLinks: [
     {
-      label: "Projects",
+      label: "Home",
       path: "/",
     },
     {
-      label: "Playground",
-      path: "/playground/",
+      label: "Projects",
+      path: "/projects/",
     },
     {
       label: "About",

@@ -46,7 +46,7 @@ const Overlay = ({ open }) => {
     <div
       className={`fixed sm:hidden inset-0 h-0 z-10 overflow-hidden bg-white/95 transition-opacity flex flex-col justify-center ${
         open ? "opacity-100" : "opacity-0"
-      } ${display && "min-h-full backdrop-blur"}`}
+      } ${display ? "min-h-full backdrop-blur" : "invisible"}`}
       aria-hidden={!open}
     >
       <ul className="px-6 space-y-8 text-3xl text-gray-600">
