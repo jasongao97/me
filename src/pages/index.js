@@ -1,5 +1,5 @@
 import * as React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 import Seo from "@components/SEO";
@@ -59,7 +59,6 @@ const IndexPage = ({ data }) => {
             description={natianyue.frontmatter.description}
             tags={["Web Development", "UI/UX", "100,000+ Users"]}
             color="#3abb6a"
-            bgColor="#fbfefc"
           >
             <div className="py-6 px-8 md:py-12 md:px-16 md:max-w-[75%]">
               <GatsbyImage
@@ -72,6 +71,17 @@ const IndexPage = ({ data }) => {
               />
             </div>
           </ProjectCard>
+        </div>
+
+        <div className="mt-12 flex flex-col items-center">
+          <div className="inline-flex rounded-md shadow">
+            <Link
+              to="/projects/"
+              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-400 hover:bg-gray-500"
+            >
+              More projects
+            </Link>
+          </div>
         </div>
       </div>
     </Layout>
