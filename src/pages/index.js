@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { FiArrowRight } from "react-icons/fi";
 
 import Seo from "@components/SEO";
 import Layout from "@layouts/BaseLayout";
@@ -74,12 +75,13 @@ const IndexPage = ({ data }) => {
         </div>
 
         <div className="mt-12 flex flex-col items-center">
-          <div className="inline-flex rounded-md shadow">
+          <div className="inline-flex rounded-md">
             <Link
               to="/projects/"
-              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-400 hover:bg-gray-500"
+              className="inline-flex items-center justify-center px-5 py-3 border font-medium rounded-md text-gray-600 bg-white hover:bg-gray-50"
             >
-              More projects
+              <span>More projects</span>
+              <FiArrowRight className="ml-1 scale-90" />
             </Link>
           </div>
         </div>

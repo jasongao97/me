@@ -22,7 +22,7 @@ const AboutPage = ({ data }) => {
       <section className="container py-6 flex flex-col sm:flex-row sm:items-start gap-10">
         <GatsbyImage
           image={data.file.childImageSharp.gatsbyImageData}
-          className="sm:w-48 2xl:w-56 shrink-0 overflow-hidden font-extraboldaspect-square rounded shadow-lg"
+          className="sm:w-48 2xl:w-56 shrink-0 overflow-hidden rounded shadow-lg"
           style={{ transform: "translateZ(0)" }}
           alt="photo"
         />

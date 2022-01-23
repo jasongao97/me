@@ -12,13 +12,20 @@ import nightAtSchoolVideo from "@assets/videos/chair-dance.mp4";
 const Card = ({ path, title, year, tags = [], children }) => {
   return (
     <Link to={path}>
-      <div className="flex flex-col p-4 bg-white border rounded hover-shadow">
-        <div className="aspect-[3/2]">{children}</div>
-        <h2 className="mt-3 font-bold flex justify-between items-center">
-          <span>{title}</span>
-          <span className="text-sm text-gray-500">{year}</span>
-        </h2>
-        <p className="mt-1 text-sm text-gray-500">{tags.join(" / ")}</p>
+      <div className="flex flex-col bg-white border box-border rounded hover-shadow">
+        <div
+          className="aspect-[3/2] rounded-t overflow-hidden"
+          style={{ transform: "translateZ(0)" }}
+        >
+          {children}
+        </div>
+        <div className="py-4 px-5">
+          <h2 className="font-bold flex justify-between items-center">
+            <span>{title}</span>
+            <span className="text-sm text-gray-500">{year}</span>
+          </h2>
+          <p className="mt-1 text-sm text-gray-500">{tags.join(" / ")}</p>
+        </div>
       </div>
     </Link>
   );
@@ -38,7 +45,7 @@ const ProjectsPage = ({ data }) => {
           >
             <GatsbyImage
               image={data.timeGlobe.childImageSharp.gatsbyImageData}
-              className="h-full object-cover rounded"
+              className="h-full object-cover"
               alt="Mirror"
             />
           </Card>
@@ -54,7 +61,7 @@ const ProjectsPage = ({ data }) => {
               loop
               muted
               playsInline
-              className="h-full object-cover rounded"
+              className="h-full object-cover"
             >
               <source src={nightAtSchoolVideo} type="video/mp4" />
             </video>
@@ -71,7 +78,7 @@ const ProjectsPage = ({ data }) => {
               loop
               muted
               playsInline
-              className="h-full object-cover rounded"
+              className="h-full object-cover"
             >
               <source src={sensorBattleVideo} type="video/mp4" />
             </video>
@@ -85,7 +92,7 @@ const ProjectsPage = ({ data }) => {
           >
             <GatsbyImage
               image={data.musicMeal.childImageSharp.gatsbyImageData}
-              className="h-full object-cover rounded"
+              className="h-full object-cover"
               alt="Mirror"
             />
           </Card>
@@ -101,7 +108,7 @@ const ProjectsPage = ({ data }) => {
               loop
               muted
               playsInline
-              className="h-full object-cover rounded"
+              className="h-full object-cover"
             >
               <source src={repulsorVideo} type="video/mp4" />
             </video>
