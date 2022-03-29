@@ -51,6 +51,19 @@ const ProjectsPage = ({ data }) => {
           </Card>
 
           <Card
+            path="/solaroid/"
+            title="Solaroid"
+            year="2021"
+            tags={["Pixel", "Energy"]}
+          >
+            <GatsbyImage
+              image={data.solaroid.childImageSharp.gatsbyImageData}
+              className="h-full object-cover"
+              alt="Mirror"
+            />
+          </Card>
+
+          <Card
             path="/night-at-school/"
             title="Night At School"
             year="2021"
@@ -121,6 +134,12 @@ const ProjectsPage = ({ data }) => {
 
 export const query = graphql`
   query {
+    solaroid: file(relativePath: { eq: "solaroid/solaroid.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData(quality: 80, aspectRatio: 1.5)
+      }
+    }
+
     musicMeal: file(relativePath: { eq: "music-meal/exhibition.jpeg" }) {
       childImageSharp {
         gatsbyImageData(quality: 80, aspectRatio: 1.5)
