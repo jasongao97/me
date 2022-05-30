@@ -25,8 +25,8 @@ const IndexPage = ({ data }) => {
           </span>
         </h1>
         <p className="mt-4 text-xl md:text-xl leading-relaxed text-gray-600 w-full">
-          I'm a <b>Designer / Maker</b> & currently a graduate student at NYU
-          ITP.
+          I'm a <b>Creative Technologist</b> & currently a graduate student at
+          NYU ITP.
         </p>
 
         {/* Projects */}

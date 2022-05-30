@@ -24,7 +24,9 @@ const Project = ({
       >
         <div className="py-5 px-6 md:py-6 md:px-8 lg:py-7 lg:px-9 flex min-w-min flex-col justify-between text-gray-900">
           <div>
-            <h2 className="text-xl font-extrabold">{title}</h2>
+            <h2 className="text-xl font-extrabold group-hover:underline">
+              {title}
+            </h2>
             <p className="mt-2 text-base text-gray-700">{description}</p>
             <p className="hidden md:flex items-center mt-2 space-x-0.5 text-sm text-gray-500">
               <span>Read more</span>

@@ -12,16 +12,16 @@ import nightAtSchoolVideo from "@assets/videos/chair-dance.mp4";
 const Card = ({ path, title, year, tags = [], children }) => {
   return (
     <Link to={path}>
-      <div className="flex flex-col bg-white border box-border rounded hover-shadow">
+      <div className="group flex flex-col bg-white border box-border rounded hover-shadow">
         <div
-          className="aspect-[3/2] rounded-t overflow-hidden"
+          className="aspect-[2] rounded-t overflow-hidden"
           style={{ transform: "translateZ(0)" }}
         >
           {children}
         </div>
         <div className="py-4 px-5">
           <h2 className="font-bold flex justify-between items-center">
-            <span>{title}</span>
+            <span className=" group-hover:underline">{title}</span>
             <span className="text-sm text-gray-500">{year}</span>
           </h2>
           <p className="mt-1 text-sm text-gray-500">{tags.join(" / ")}</p>
@@ -74,7 +74,7 @@ const ProjectsPage = ({ data }) => {
               loop
               muted
               playsInline
-              className="h-full object-cover"
+              className="w-full object-cover"
             >
               <source src={nightAtSchoolVideo} type="video/mp4" />
             </video>
@@ -91,23 +91,10 @@ const ProjectsPage = ({ data }) => {
               loop
               muted
               playsInline
-              className="h-full object-cover"
+              className="w-full object-cover"
             >
               <source src={sensorBattleVideo} type="video/mp4" />
             </video>
-          </Card>
-
-          <Card
-            path="/music-meal/"
-            title="Music Meal"
-            year="2019"
-            tags={["E-textile", "Music"]}
-          >
-            <GatsbyImage
-              image={data.musicMeal.childImageSharp.gatsbyImageData}
-              className="h-full object-cover"
-              alt="Mirror"
-            />
           </Card>
 
           <Card
@@ -121,7 +108,7 @@ const ProjectsPage = ({ data }) => {
               loop
               muted
               playsInline
-              className="h-full object-cover"
+              className="w-full object-cover"
             >
               <source src={repulsorVideo} type="video/mp4" />
             </video>
@@ -135,12 +122,6 @@ const ProjectsPage = ({ data }) => {
 export const query = graphql`
   query {
     solaroid: file(relativePath: { eq: "solaroid/solaroid.jpeg" }) {
-      childImageSharp {
-        gatsbyImageData(quality: 80, aspectRatio: 1.5)
-      }
-    }
-
-    musicMeal: file(relativePath: { eq: "music-meal/exhibition.jpeg" }) {
       childImageSharp {
         gatsbyImageData(quality: 80, aspectRatio: 1.5)
       }
