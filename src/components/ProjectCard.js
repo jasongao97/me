@@ -13,7 +13,7 @@ const Project = ({
   children,
 }) => {
   return (
-    <Link className="group hover-shadow" to={path}>
+    <Link className="group hover-shadow select-none" to={path}>
       <div
         className={`flex flex-col ${
           reverse ? "md:flex-row-reverse" : "md:flex-row"

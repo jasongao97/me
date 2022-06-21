@@ -18,16 +18,18 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo />
       <div className="container py-16">
-        <h1 className="text-3xl md:text-4xl 2xl:text-4xl flex flex-col-reverse md:block leading-relaxed text-gray-800 font-black w-full whitespace-pre-line">
-          Hello, my name is Jason{" "}
-          <span role="img" aria-label="Waving Hand" className="inline-block">
-            👋
-          </span>
-        </h1>
-        <p className="mt-4 text-xl md:text-xl leading-relaxed text-gray-600 w-full">
-          I'm a <b>Creative Technologist</b> & currently a graduate student at
-          NYU ITP.
-        </p>
+        <div className="flex flex-col items-center">
+          <h1 className="text-3xl md:text-4xl 2xl:text-4xl flex flex-col-reverse md:block leading-relaxed text-gray-800 font-black w-full md:w-auto whitespace-pre-line">
+            Hello, my name is Jason{" "}
+            <span role="img" aria-label="Waving Hand" className="inline-block">
+              👋
+            </span>
+          </h1>
+          <p className="mt-4 md:mt-6 text-xl md:text-xl leading-relaxed text-gray-600">
+            I'm a <b>Creative Technologist</b> & currently a graduate student at
+            NYU ITP.
+          </p>
+        </div>
 
         {/* Projects */}
 
