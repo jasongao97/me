@@ -6,12 +6,33 @@ const Dot = ({ style }) => {
   );
 };
 
-const Vimeo = ({ id, caption }) => {
+const Wrapper = ({ caption, children }) => {
+  return (
+    <figure>
+      <div className="relative rounded overflow-hidden shadow-lg aspect-video">
+        {children}
+      </div>
+      {caption && <figcaption className="text-center">{caption}</figcaption>}
+    </figure>
+  );
+};
+
+export const Video = ({ src, caption }) => {
+  return (
+    <Wrapper caption={caption}>
+      <video controls className="w-full object-cover m-0">
+        <source src={src} type="video/mp4" />
+      </video>
+    </Wrapper>
+  );
+};
+
+export const Vimeo = ({ id, caption }) => {
   const [display, setDisplay] = React.useState(false);
 
   return (
-    <figure className="py-4">
-      <div className="relative rounded overflow-hidden shadow-lg aspect-video">
+    <Wrapper caption={caption}>
+      <div>
         <div className="absolute inset-0 w-full h-full bg-gray-300 flex gap-4 justify-center items-center">
           <Dot
             style={{
@@ -41,9 +62,6 @@ const Vimeo = ({ id, caption }) => {
           onLoad={() => setDisplay(true)}
         />
       </div>
-      {caption && <figcaption className="text-center">{caption}</figcaption>}
-    </figure>
+    </Wrapper>
   );
 };
-
-export default Vimeo;

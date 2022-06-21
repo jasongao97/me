@@ -4,7 +4,7 @@ import { MDXProvider } from "@mdx-js/react";
 import Header from "@components/Header";
 import Overlay from "@components/Overlay";
 import Footer from "@components/Footer";
-import Vimeo from "@components/Vimeo";
+import { Vimeo, Video } from "@components/Video";
 
 const Layout = ({ children }) => {
   const [overlayOpen, setOverlayOpen] = React.useState(false);
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         className="grow flex flex-col items-center justify-center"
         aria-hidden={overlayOpen}
       >
-        <MDXProvider components={{ Vimeo }}>{children}</MDXProvider>
+        <MDXProvider components={{ Vimeo, Video }}>{children}</MDXProvider>
       </main>
       <Footer />
     </div>
