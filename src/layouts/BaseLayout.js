@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
   const [overlayOpen, setOverlayOpen] = React.useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col pattern-graph">
+    <div className="min-h-screen flex flex-col pattern-texture">
       <Header
         overlayOpen={overlayOpen}
         onToggleOverlay={() => setOverlayOpen(!overlayOpen)}
