@@ -21,7 +21,7 @@ export const Video = ({ src, caption }) => {
   return (
     <Wrapper caption={caption}>
       <video controls className="w-full object-cover m-0">
-        <source src={src} type="video/mp4" />
+        <source src={`${src}#t=0.001`} type="video/mp4" />
       </video>
     </Wrapper>
   );
