@@ -37,6 +37,8 @@ module.exports = {
         extensions: [".mdx", ".md"],
         commonmark: true,
         plugins: ["gatsby-remark-images"],
+        remarkPlugins: [require("remark-math")],
+        rehypePlugins: [[require("rehype-katex"), { strict: "ignore" }]],
         gatsbyRemarkPlugins: [
           {
             resolve: "gatsby-remark-images",
