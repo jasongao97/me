@@ -22,6 +22,11 @@ a.anchor {
   .link-blue {
     @apply font-semibold border-b border-blue-400 hover:border-b-2;
   }
+
+  .video-cover {
+    clip-path: inset(1px 1px);
+    @apply w-full h-full scale-[101%] object-cover;
+  }
 }
 
 @layer utilities {

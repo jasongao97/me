@@ -9,13 +9,16 @@ const PostLayout = ({ data }) => {
   return data.mdx.parent.sourceInstanceName === "projects" ? (
     <ProjectLayout mdx={data.mdx} photos={data.photos.edges} />
   ) : (
-    <ExperimentLayout mdx={data.mdx} />
+    <ExperimentLayout mdx={data.mdx} photos={data.photos.edges} />
   );
 };
 
 export const query = graphql`
   query PostBySlug($id: String!, $galleryDir: String!) {
-    photos: allFile(filter: { relativeDirectory: { eq: $galleryDir } }) {
+    photos: allFile(
+      filter: { relativeDirectory: { eq: $galleryDir } }
+      sort: { fields: name }
+    ) {
       edges {
         node {
           childImageSharp {
