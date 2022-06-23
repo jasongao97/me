@@ -45,6 +45,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
+    "react-medium-image-zoom": "^4.4.3",
     "rehype-katex": "^5.0.0",
     "remark-math": "^3.0.1",
     "tailwindcss": "^3.0.7",
