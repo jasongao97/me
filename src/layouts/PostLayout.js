@@ -22,7 +22,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(width: 800)
           }
         }
       }
