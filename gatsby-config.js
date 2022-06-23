@@ -37,11 +37,13 @@ module.exports = {
         extensions: [".mdx", ".md"],
         commonmark: true,
         plugins: ["gatsby-remark-images"],
+        remarkPlugins: [require("remark-math")],
+        rehypePlugins: [[require("rehype-katex"), { strict: "ignore" }]],
         gatsbyRemarkPlugins: [
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 1000,
+              maxWidth: 1200,
               linkImagesToOriginal: false,
               withWebp: true,
             },
@@ -59,7 +61,15 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          quality: 80,
+          width: 1200,
+        },
+      },
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
