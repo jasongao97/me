@@ -111,7 +111,7 @@ export const query = graphql`
               thumbnail {
                 image {
                   childImageSharp {
-                    gatsbyImageData(quality: 80, placeholder: TRACED_SVG)
+                    gatsbyImageData(placeholder: TRACED_SVG)
                   }
                 }
                 alt

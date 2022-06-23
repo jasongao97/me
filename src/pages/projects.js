@@ -122,13 +122,13 @@ export const query = graphql`
   query {
     solaroid: file(relativePath: { eq: "solaroid/solaroid.jpeg" }) {
       childImageSharp {
-        gatsbyImageData(quality: 80, aspectRatio: 1.5)
+        gatsbyImageData(aspectRatio: 1.5)
       }
     }
 
     timeGlobe: file(relativePath: { eq: "time-globe/final.jpg" }) {
       childImageSharp {
-        gatsbyImageData(quality: 80, aspectRatio: 1.5)
+        gatsbyImageData(aspectRatio: 1.5)
       }
     }
   }
