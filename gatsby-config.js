@@ -65,7 +65,6 @@ module.exports = {
       resolve: "gatsby-plugin-sharp",
       options: {
         defaults: {
-          quality: 80,
           width: 1200,
         },
       },
