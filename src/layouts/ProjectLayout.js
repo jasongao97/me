@@ -1,13 +1,14 @@
-import React from "react";
+import * as React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { FiCalendar, FiBox, FiUsers, FiActivity } from "react-icons/fi";
 
 import Seo from "@components/SEO";
+import Gallery from "@components/Gallery";
 import Layout from "@layouts/BaseLayout";
 import TableOfContents from "@components/TableOfContents";
 
-const ProjectLayout = ({ mdx }) => {
+const ProjectLayout = ({ mdx, photos }) => {
   const {
     body,
     tableOfContents,
@@ -85,6 +86,7 @@ const ProjectLayout = ({ mdx }) => {
           <TableOfContents toc={tableOfContents} />
           <div className="prose prose-blue max-w-none">
             <MDXRenderer>{body}</MDXRenderer>
+            {photos.length > 0 && <Gallery photos={photos} />}
           </div>
         </div>
       </div>

@@ -4,17 +4,27 @@ import { graphql } from "gatsby";
 import ProjectLayout from "@layouts/ProjectLayout";
 import ExperimentLayout from "@layouts/ExperimentLayout";
 
-const PostPage = ({ data }) => {
+const PostLayout = ({ data }) => {
+  // handle projects & experiments
   return data.mdx.parent.sourceInstanceName === "projects" ? (
-    <ProjectLayout mdx={data.mdx} />
+    <ProjectLayout mdx={data.mdx} photos={data.photos.edges} />
   ) : (
     <ExperimentLayout mdx={data.mdx} />
   );
 };
 
 export const query = graphql`
-  query PostBySlug($slug: String) {
-    mdx(slug: { eq: $slug }) {
+  query PostBySlug($id: String!, $galleryDir: String!) {
+    photos: allFile(filter: { relativeDirectory: { eq: $galleryDir } }) {
+      edges {
+        node {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+    mdx(id: { eq: $id }) {
       parent {
         ... on File {
           sourceInstanceName
@@ -34,7 +44,7 @@ export const query = graphql`
         illustration {
           image {
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, quality: 80)
+              gatsbyImageData(layout: CONSTRAINED)
             }
           }
           alt
@@ -44,4 +54,4 @@ export const query = graphql`
   }
 `;
 
-export default PostPage;
+export default PostLayout;

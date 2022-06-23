@@ -43,7 +43,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 1000,
+              maxWidth: 1200,
               linkImagesToOriginal: false,
               withWebp: true,
             },
@@ -61,7 +61,15 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          quality: 80,
+          width: 1200,
+        },
+      },
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
