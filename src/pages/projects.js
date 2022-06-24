@@ -44,7 +44,10 @@ const ProjectsPage = ({ data }) => {
             tags={["Product Design"]}
           >
             <video autoPlay loop muted playsInline className="video-cover">
-              <source src={duneVideo} type="video/mp4" />
+              <source
+                src={`${duneVideo}#t=${Math.random() * 16}`}
+                type="video/mp4"
+              />
             </video>
           </Card>
 
