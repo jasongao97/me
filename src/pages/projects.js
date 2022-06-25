@@ -5,8 +5,8 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import Seo from "@components/SEO";
 import Layout from "@layouts/BaseLayout";
 
-import sensorBattleVideo from "@assets/videos/sensor-battle.mp4";
 import nightAtSchoolVideo from "@assets/videos/chair-dance.mp4";
+import repulsorVideo from "@assets/videos/repulsor.mp4";
 import duneVideo from "@assets/videos/dune.mp4";
 
 const Card = ({ path, title, year, tags = [], children }) => {
@@ -19,7 +19,7 @@ const Card = ({ path, title, year, tags = [], children }) => {
         >
           {children}
         </div>
-        <div className="px-6 py-4">
+        <div className="px-5 py-4">
           <h2 className="font-bold font-xl flex justify-between items-center">
             <span className=" group-hover:underline">{title}</span>
             <span className="text-sm text-gray-500">{year}</span>
@@ -94,12 +94,14 @@ const ProjectsPage = ({ data }) => {
             year="2020"
             tags={["Installation", "Game"]}
           >
-            <video autoPlay loop muted playsInline className="video-cover">
-              <source src={sensorBattleVideo} type="video/mp4" />
-            </video>
+            <GatsbyImage
+              image={data.sensorBattle.childImageSharp.gatsbyImageData}
+              className="h-full object-cover"
+              alt="Cars"
+            />
           </Card>
 
-          {/* <Card
+          <Card
             path="/iron-mans-repulsor/"
             title="Iron Man's Repulsor"
             year="2019"
@@ -114,7 +116,7 @@ const ProjectsPage = ({ data }) => {
             >
               <source src={repulsorVideo} type="video/mp4" />
             </video>
-          </Card> */}
+          </Card>
         </div>
       </div>
     </Layout>
@@ -125,13 +127,19 @@ export const query = graphql`
   query {
     solaroid: file(relativePath: { eq: "solaroid/solaroid.jpeg" }) {
       childImageSharp {
-        gatsbyImageData(aspectRatio: 1.5)
+        gatsbyImageData
       }
     }
 
     timeGlobe: file(relativePath: { eq: "time-globe/final.jpg" }) {
       childImageSharp {
-        gatsbyImageData(aspectRatio: 1.5)
+        gatsbyImageData
+      }
+    }
+
+    sensorBattle: file(relativePath: { eq: "sensor-battle/exhibition.jpg" }) {
+      childImageSharp {
+        gatsbyImageData
       }
     }
   }
